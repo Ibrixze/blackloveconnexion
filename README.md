@@ -1,3 +1,12 @@
+============================================================================================================
+Comme je te l'avais dis  la dernière fois c'est le prototype. Après on va bien designer
+Après avoir cloner le dossier (Verifie si tu es dans le bon dossier):
+
+#npm install (Pour installer toutes les dépendances)
+#npm start
+
+
+============================================================================================================
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
