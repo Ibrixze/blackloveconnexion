@@ -32,7 +32,7 @@ class Header extends React.Component{
                         <a href="/">LA FONDATRICE</a>
                     </nav>
                     <div className="bouton-menu">
-                        <button id="connexion" className="btn" onClick={this.props.handleClick} href="#modal" modal-type="login">CONNEXION</button>
+                        <a id="connexion" className="btn" onClick={this.props.handleClick} href="#modal" modal-type="login">CONNEXION</a>
                     </div>
                 </div>
                    

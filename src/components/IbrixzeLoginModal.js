@@ -1,4 +1,5 @@
 import React from "react"
+import { CloseOutlined } from "@ant-design/icons"
 import "../css/modal.css"
 class IbrixzeLoginModal extends React.Component{
     
@@ -13,13 +14,24 @@ class IbrixzeLoginModal extends React.Component{
             return(
                 <div id="modal" className="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" style={{display: "none"}}>
                     <div className="modal-wrapper js-modal-stop-prop" onClick={this.props.handleStopPropag}>
-                        <button className="js-close-modal" onClick={this.props.handleCloseModal}>Fermer la boite de dialogue</button>
-                        <h4 id="modal-title">CONNECTEZ-VOUS</h4>
-                        <div>
+                        <div className="close-button">
+                            <a className="js-close-modal" href="#" onClick={this.props.handleCloseModal}><CloseOutlined style={{fontSize : "1.5rem", color :"black"}}/></a>
+                        </div>
+                        <div className="modal-title">
+                            <h3 id="modal-title">CONNECTEZ-VOUS</h3>
+
+                        </div><hr />
+                        <div className="modal-container">
                             <form method="post" action="#">
-                                <input type="text" name="password" placeholder="email"/>
-                                <input type="password" name="password" placeholder="Mot de passe"/>
-                                <input type="submit" name="" id="login" value="SE CONNECTER" onClick={this.props.handleCloseModal}/>
+                                <div className="form-groupment">
+                                    <input type="text" className="form-input" name="password" placeholder="Exemple : digbeu@cravate.fr"/> <br /><br />
+                                </div>
+                                <div className="form-groupment">
+                                    <input type="password" className="form-input" name="password" placeholder="Mot de passe"/><br /><br />
+                                </div>
+                                <div className="btn-submit">
+                                    <a href="#" className="btn-modal" name="" id="login" onClick={this.props.handleCloseModal}>CONNEXION</a>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -30,12 +42,20 @@ class IbrixzeLoginModal extends React.Component{
             return(
                 <div id="modal" className="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" style={{display: "none"}}>
                     <div className="modal-wrapper js-modal-stop-prop" onClick={this.props.handleStopPropag}>
-                        <button className="js-close-modal" onClick={this.props.handleCloseModal}>Fermer la boite de dialogue</button>
-                        <h4 id="modal-title">OBTENEZ UN COMPTE</h4>
-                        <div>
+                        <div className="close-button">
+                            <a className="js-close-modal" href="#" onClick={this.props.handleCloseModal}><CloseOutlined style={{fontSize : "1.5rem", color :"black"}}/></a>
+                        </div>
+                        <div className="modal-title">
+                            <h3 id="modal-title">OBTENIR UN COMPTE</h3>
+                        </div>
+                        <div className="modal-container">
                             <form method="post" action="#">
-                                <input type="text" name="password" placeholder="email"/>
-                                <button>CONTINUER</button>
+                                <div className="form-groupment">
+                                    <input className="form-input" type="text" name="password" placeholder="Exemple : digbeu@cravate.fr"/><br /><br />
+                                </div>
+                                <div className="btn-submit">
+                                    <a href="#" className="btn-modal" name="" id="sign" onClick={this.props.handleCloseModal}>CONTINUER</a>
+                                </div>    
                             </form>
                         </div>
                     </div>

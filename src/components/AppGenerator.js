@@ -28,7 +28,8 @@ class AppGenerator extends React.Component {
 		
 		this.state = {
 			candidat : null,
-			cpt : 0
+			cpt : 0,
+			editMode : false
 		}
 	}
 
@@ -51,6 +52,15 @@ class AppGenerator extends React.Component {
 		this.setState({cpt : this.state.cpt - 1})
 	}
 
+	toggleEditMode = () =>{
+		this.setState({ editMode : !this.state.editMode}, () => console.log("switched"))
+		/*
+			L'IDEE ICI EST DE SWITCHER D'AFFICHAGE ENTRE LA MODIFICATION DU PROFIL ET LA STATUT BAR 
+			TOUT EN VERIFIANT SI LE editMode EST A TRUE OU A FALSE. POUR CE FAIRE ON DOIT DANS UN 
+			PREMIER TEMPS RENDRE LE CODE PLUS MODULAIRE. 
+		*/
+	}
+
 	render() {
 		console.log(this.state.cpt)
 		if(this.state.candidat !== null && this.state.cpt > (this.state.candidat.length)){
@@ -59,10 +69,11 @@ class AppGenerator extends React.Component {
 		if(this.state.candidat !== null && this.state.cpt < 0){
 			this.setState({cpt : (this.state.candidat.length - 1)})
 		}
+		console.log(this.state.editMode)
 		return (
 			<div className='app-container'>
 				<div className="manager">
-					<div className="manager-title">
+					<div className="manager-title" onClick={this.toggleEditMode}>
 						<div className="profile-picture"></div>
 						<h4>Mon Profil</h4>
 					</div><hr />		
@@ -70,7 +81,7 @@ class AppGenerator extends React.Component {
 						<div>
 							<h5 style={{borderBottom: '3px solid darkmagenta', padding: '5px'}}>Evenement(s)</h5>
 							<h5>Message</h5>
-						</div><hr/>
+						</div>
 						<span><a href="#">Anniversaire de papa de ça</a></span>
 						<span><a href="#">ça allait se casserr!!</a></span>
 						<span><a href="#">Event bidon 3</a></span>
