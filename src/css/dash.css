@@ -1,0 +1,19 @@
+.dash-container{
+    width: "100%"; 
+    height: "100%";
+    display: "flex";
+    justify-content: "center";
+    align-items: "center"; 
+    flex-direction:"column"
+  }
+  
+  .manger{
+    flex : 1;
+    background: red;
+    border-right: 1 px solid black
+  }
+  
+  .displayer{
+    flex: 3;
+  }
+  

@@ -1,0 +1,14 @@
+.about-title h3{
+    text-align: center;
+    margin-top: 5%;
+	margin-bottom: 1%;
+}
+
+.about-content p{
+    color: #787878;
+	font-size: 25px;
+	line-height: 25px;
+    text-align: center;
+    padding: 0 5%;
+	opacity: 0.8;
+}

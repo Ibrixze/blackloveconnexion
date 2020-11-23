@@ -1,0 +1,112 @@
+.app-container{
+    border: 2px dashed black;
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.manager{
+    /* border-right: 1px solid black; */
+    border : 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    margin:0;
+    flex: 1;
+    /* width: 75%; */
+    /* height: 100vh; */
+}
+
+.manager-content h5{
+    display: inline-block;
+    margin-left: 25px;
+}
+.manager-content span{
+    display: block;
+    border-bottom : 0.5px solid rgba(0, 0, 0, 0.1);
+    line-height: 40px;
+    width: 100%;
+    padding: 10px;
+}
+
+.manager-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+}
+.displayer{
+    /* border-right: 1px solid black; */
+    /* margin:0; */
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    /* width: 75%; */
+    /* height: 100; */
+}
+
+.displayer-content{
+    flex: 1;
+    width: 30%;
+    height: 70%;
+}
+/* .displayer-content:nth-child(2){
+    border : 1px dashed rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.1);
+} */
+.card{
+    border : 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3%;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+}
+.card-opac{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.card-picture{
+    width: 100%;
+    height: 80%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.swip{
+    display: block;
+    transform: translateX(300%);
+    transform: translateX(0%);
+    display : null; 
+    transition: 2s;
+}
+
+.card:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.nav-btn{
+    font-size : "3rem";
+    opacity: "0.2";
+}
+
+.profile-picture{
+    width: 25%;
+    height: 80px;
+    border:1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    margin-right: 25px;
+    text-align: center;   
+}
