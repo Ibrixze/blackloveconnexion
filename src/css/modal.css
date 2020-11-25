@@ -80,7 +80,7 @@ body, html{
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
-	flex: 1
+	flex: 1;
 }
 
 .modal-title{

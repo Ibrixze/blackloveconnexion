@@ -10,7 +10,7 @@
   .manger{
     flex : 1;
     background: red;
-    border-right: 1 px solid black
+    border-right: 1px solid black
   }
   
   .displayer{

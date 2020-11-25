@@ -8,6 +8,7 @@ class CandidatesCard extends React.Component {
 		super(props)
 		this.state = {
 			candidat : null,
+			randomPictures : null,
 			cpt : 0,
 			editMode : false
 		}
@@ -51,6 +52,7 @@ class CandidatesCard extends React.Component {
 		if(this.state.candidat !== null && this.state.cpt < 0){
 			this.setState({cpt : (this.state.candidat.length - 1)})
 		}
+		
 		return (
 			<>
 				<div className="card-opac">
@@ -59,7 +61,10 @@ class CandidatesCard extends React.Component {
 				<div className="displayer-content">
 					<div className="card">
 						<div className="card-picture">
-							{(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].id : ""}
+							
+
+							{<img src="https://picsum.photos/id/11/315/365" style={{borderTopLeftRadius: "10px", borderTopRightRadius: "10px"}}/>}
+							
 						</div>
 						<div className="card-info">
 							<p>{(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].name : ""} , {(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].address.city : ""}</p>

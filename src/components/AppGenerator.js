@@ -5,7 +5,9 @@ import CandidatesCard from "./CandidatesCard"
 import RandomContent from "./RandomContent"
 import ManagerContentHeader from "./ManagerContentHeader"
 import EditProfile from "./EditProfile"
+import { LeftOutlined } from '@ant-design/icons'
 import "../css/app-generator.css"
+import profil from './digbeu.jpg'
 
 
 class AppGenerator extends React.Component {
@@ -45,8 +47,8 @@ class AppGenerator extends React.Component {
 			<div className='app-container'>
 				<div className="manager">
 					<div className="manager-title" onClick={this.toggleEditMode}>
-						<div className="profile-picture"></div>
-						<h4>Mon Profil</h4>
+						{(this.state.editProfile === true)?<LeftOutlined style={{fontSize : "1.5rem", marginRight: "20%"}} />:<div className="profile-picture"><profil /></div>}
+						{(this.state.editProfile === true)?<h4>Mon Profil</h4>:<h4>Digbeu Cravate</h4>}
 					</div><hr/>		
 					<div className="manager-content">
 						{(this.state.editProfile === false)?<ManagerContentHeader handleActive={this.handleActive} />:""}
