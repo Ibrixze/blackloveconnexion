@@ -4,6 +4,7 @@ import React from 'react'
 import CandidatesCard from "./CandidatesCard"
 import RandomContent from "./RandomContent"
 import ManagerContentHeader from "./ManagerContentHeader"
+import EditProfile from "./EditProfile"
 import "../css/app-generator.css"
 
 
@@ -13,15 +14,24 @@ class AppGenerator extends React.Component {
 		super(props)
 		
 		this.state = {
-			editMode : false
+			editProfile : false,
+			message : false,
+			eventList : true
 		}
 	}
 
 
-	 
+	handleActive = (e) => {
+		let target = document.getElementById(e.target.getAttribute("id"))
+		let actualActive = document.querySelector('.header-active')
+		actualActive.classList.remove('header-active')
+		target.classList.add('header-active')
+		this.setState({ message : !this.state.message, eventList: !this.state.eventList}, () => console.log('menu active swtiched!'))
+		
+	}
 
 	toggleEditMode = () =>{
-		this.setState({ editMode : !this.state.editMode}, () => console.log("switched"))
+		this.setState({ editProfile : !this.state.editProfile}, () => console.log("switched"))
 		/*
 			L'IDEE ICI EST DE SWITCHER D'AFFICHAGE ENTRE LA MODIFICATION DU PROFIL ET LA STATUT BAR 
 			TOUT EN VERIFIANT SI LE editMode EST A TRUE OU A FALSE. POUR CE FAIRE ON DOIT DANS UN 
@@ -30,23 +40,21 @@ class AppGenerator extends React.Component {
 	}
 
 	render() {
-		console.log(this.state.editMode)
+		console.log(this.state.editProfile)
 		return (
 			<div className='app-container'>
 				<div className="manager">
 					<div className="manager-title" onClick={this.toggleEditMode}>
 						<div className="profile-picture"></div>
 						<h4>Mon Profil</h4>
-					</div><hr />		
+					</div><hr/>		
 					<div className="manager-content">
-						<div>
-							<ManagerContentHeader />
-						</div>
-						<RandomContent />					
+						{(this.state.editProfile === false)?<ManagerContentHeader handleActive={this.handleActive} />:""}
+						{(this.state.editProfile === false && this.state.eventList === true)?<RandomContent />:<><span>Modifier son profil</span><span>Se déconnecter</span></>}					
 					</div>
 				</div>
 				<div className="displayer">
-					<CandidatesCard />
+					{(this.state.editProfile === false)?<CandidatesCard />:<EditProfile />}
 				</div>
 			</div>
 		)

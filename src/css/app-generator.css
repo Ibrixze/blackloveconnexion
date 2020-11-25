@@ -122,3 +122,95 @@
     margin-right: 25px;
     text-align: center;   
 }
+
+.manager-content-header{
+    /* border: 1px solid black; */
+    cursor: pointer; 
+    padding: 5px;
+}
+
+.header-active{
+    border-bottom: 3px solid darkmagenta;
+}
+
+.edit-container{
+    display: flex;
+    justify-content:center; 
+    flex-direction: column;
+    align-items:center; 
+    height: 100%; 
+    width:100%;
+    padding-top: 7rem; 
+    border:1px dashed black;
+}
+
+.edit-header{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    /* border: 1px dashed darkmagenta; */
+    width: 70%;
+}
+
+.edit-header .profile-picture{
+    flex: 1;
+}
+
+.edit-header .user-info{
+    flex: 7;
+    padding-top: 1rem;
+    /* border: 1px dashed blueviolet; */
+}
+
+.user-info .name{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.user-info .email{
+    color: #969496;
+    font-style: italic;
+}
+
+.edit-content{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    /* border: 1px dashed palegreen; */
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row .first, .row .second{
+    flex: 1;
+
+}
+
+.row .second{
+    padding-left: 1rem;
+}
+
+.form-groupment{
+    padding-top: 2rem;
+}
+.edit-content .form-input{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.edit-content .row .form-input{
+   width: 100%;
+}
+
+.form-groupment a{
+    margin-left: 85%;
+}

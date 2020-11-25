@@ -76,14 +76,14 @@ class App extends React.Component{
               <Banner handleClick={this.modalButton} />
             </div>
           </div> 
-          <About />
+          {/* <About /> */}
         </div>
         );
     }
     return(
-          <div>
+          <>
               <AppGenerator />
-          </div>
+          </>
     )
   
   }

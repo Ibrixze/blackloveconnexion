@@ -24,11 +24,11 @@ class IbrixzeLoginModal extends React.Component{
                         <div className="modal-container">
                             <form method="post" action="#">
                                 <div className="form-groupment">
-                                    <input type="text" className="form-input" name="password" placeholder="Exemple : digbeu@cravate.fr"/> <br /><br />
+                                    <input type="text" className="form-input" name="password" placeholder="Votre identifiant"/> 
                                 </div>
                                 <div className="form-groupment">
-                                    <input type="password" className="form-input" name="password" placeholder="Mot de passe"/><br /><br />
-                                </div>
+                                    <input type="password" className="form-input" name="password" placeholder="Mot de passe"/>
+                                </div><br/>
                                 <div className="btn-submit">
                                     <a href="#" className="btn-modal" name="" id="login" onClick={this.props.handleCloseModal}>CONNEXION</a>
                                 </div>
@@ -51,8 +51,8 @@ class IbrixzeLoginModal extends React.Component{
                         <div className="modal-container">
                             <form method="post" action="#">
                                 <div className="form-groupment">
-                                    <input className="form-input" type="text" name="password" placeholder="Exemple : digbeu@cravate.fr"/><br /><br />
-                                </div>
+                                    <input className="form-input" type="text" name="password" placeholder="Adresse e-mail"/>
+                                </div><br/>
                                 <div className="btn-submit">
                                     <a href="#" className="btn-modal" name="" id="sign" onClick={this.props.handleCloseModal}>CONTINUER</a>
                                 </div>    
