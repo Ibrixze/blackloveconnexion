@@ -19,8 +19,6 @@ class CandidatesCard extends React.Component {
 		let response = await fetch("https://jsonplaceholder.typicode.com/users")
 
 		response.json().then(response => this.setState({candidat : response}, console.log("monted")))
-		
-			 
 	 }
 
 	next = () => {
@@ -61,15 +59,13 @@ class CandidatesCard extends React.Component {
 				<div className="displayer-content">
 					<div className="card">
 						<div className="card-picture">
-							
-
-							{<img src="https://picsum.photos/id/11/315/365" style={{borderTopLeftRadius: "10px", borderTopRightRadius: "10px"}}/>}
-							
+							<img src={`https://picsum.photos/id/${(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].id:''}/315/365`} style={{borderTopLeftRadius: "10px", borderTopRightRadius: "10px", width:"100%", height:"100%"}}/>
 						</div>
 						<div className="card-info">
 							<p>{(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].name : ""} , {(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].address.city : ""}</p>
 						</div>
 					</div>
+					<div><button style={{backgroundColor: "darkmagenta", fontSize:"14px", fontWeight:"bold", color:"white", padding : "15px", borderRadius : "10px", margin: "10px 15%"}}>Singifier l'intérêt à Couthinho pour une passe D</button></div>
 				</div>
 				<div className="card-opac">
 					{(this.state.candidat !==null && this.state.cpt !== this.state.candidat.length -1)?<RightOutlined onClick={this.next} style={{fontSize : "3rem", opacity: "0.2"}} />:""}

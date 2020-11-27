@@ -1,5 +1,5 @@
 import React from "react"
-
+import digbeu from './digbeu.jpg'
 
 
 class EditProfile extends React.Component{
@@ -9,7 +9,9 @@ class EditProfile extends React.Component{
         return (
             <div className="edit-container">
                 <div className="edit-header">
-                    <div className="profile-picture"></div>
+                    <div className="profile-picture">
+                        <img src={digbeu} style={{width : "100%", height: "100%", borderRadius : "50%"}}/>
+                    </div>
                     <div className="user-info">
                         <span className="name">Digbeu Cravate</span><br/>
                         <span className="email">digbeu@cravate.fr</span>
@@ -27,7 +29,7 @@ class EditProfile extends React.Component{
                         </div>
                         <div className="column">
                             <div className="form-groupment">
-                                <input type="text" className="form-input" name="email" value="digbeu@cravat.fr"/>
+                                <input type="text" className="form-input" name="email" value="digbeu@cravate.fr"/>
                             </div>
                             <div className="form-groupment">
                                 <input type="password" className="form-input" name="password" value="jenesaispas"/>
