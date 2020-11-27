@@ -26,10 +26,10 @@ class Header extends React.Component{
                 </div>
                 <div className="nav-bar">               
                     <nav className="lien">
-                        <a href="/">ACCUEIL</a> 
-                        <a href="/">PRESENTATION</a>
-                        <a href="/">OBJECTIF</a>
-                        <a href="/">LA FONDATRICE</a>
+                        <a href="/"></a> 
+                        <a href="/"></a>
+                        <a href="/"></a>
+                        <a href="/"></a>
                     </nav>
                     <div className="bouton-menu">
                         <a id="connexion" className="btn" onClick={this.props.handleClick} href="#modal" modal-type="login">CONNEXION</a>

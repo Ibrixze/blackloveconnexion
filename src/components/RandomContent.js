@@ -1,4 +1,4 @@
-const RandomContent = function({content, handleViewEvent, handleIsActive}){
+const RandomContent = function({content, handleView, handleIsActive}){
 	
 	// let $elements = contents.forEach((content, index) => {
 	// 	<span><a href="#">{content.title}</a></span>
@@ -8,7 +8,7 @@ const RandomContent = function({content, handleViewEvent, handleIsActive}){
 	console.log(handleIsActive)
 	return(
 		<>
-			<span className={`list-view ${(handleIsActive!==null && handleIsActive == content.id)?'list-view-active':''}`} id={content.id} onClick={handleViewEvent}>{content.title}</span>
+			<span className={`list-view ${(handleIsActive!==null && handleIsActive == content.id)?'list-view-active':''}`} id={content.id} onClick={handleView}>{content.title}</span>
 		</>
 	)
 }

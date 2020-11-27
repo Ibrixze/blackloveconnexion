@@ -58,7 +58,9 @@ class App extends React.Component{
   stopPropagation = (e) => {
     e.stopPropagation()
   }
-
+  handleLogout = (e) =>{
+    this.setState({logged : false})
+  }
 
   render(){
     if(!this.state.logged){
@@ -82,7 +84,7 @@ class App extends React.Component{
     }
     return(
           <>
-              <AppGenerator />
+              <AppGenerator handleLogout={this.handleLogout}/>
           </>
     )
   

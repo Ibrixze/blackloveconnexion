@@ -4,7 +4,9 @@ import digbeu from './digbeu.jpg'
 
 class EditProfile extends React.Component{
 
-
+    save = (e) =>{
+        e.preventDefault()
+    }
     render(){
         return (
             <div className="edit-container">
@@ -35,7 +37,7 @@ class EditProfile extends React.Component{
                                 <input type="password" className="form-input" name="password" value="jenesaispas"/>
                             </div>
                             <div className="form-groupment">
-                                <a class="btn" href="#">Enregister</a>
+                                <button onClick={this.save} style={{backgroundColor: "darkmagenta", fontSize:"14px", fontWeight:"bold", color:"white", padding : "15px", borderRadius : "5px", margin: "10px 85%"}}>Enregister</button>
                             </div>
                         </div>
                     </form>
