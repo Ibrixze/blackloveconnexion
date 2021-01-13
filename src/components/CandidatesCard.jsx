@@ -1,6 +1,20 @@
 import React from 'react'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
+import Like from '../like.png'
 
+const interess = {
+	backgroundColor: "#5A82C3",
+	position:'relative', 
+	top: '50px',
+	left: '25%',
+	fontSize:"14px", 
+	fontWeight:"bold", 
+	color:"white", 
+	padding : "5%", 
+	borderRadius : "10px", 
+	margin: "10%",
+	textAlign : 'center'
+}
 class CandidatesCard extends React.Component {
 
 
@@ -65,7 +79,7 @@ class CandidatesCard extends React.Component {
 							<p>{(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].name : ""} , {(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].address.city : ""}</p>
 						</div>
 					</div>
-					<div><button style={{backgroundColor: "darkmagenta", fontSize:"14px", fontWeight:"bold", color:"white", padding : "15px", borderRadius : "10px", margin: "10px 15%"}}>Singifier l'intérêt à Couthinho pour une passe D</button></div>
+					<div><a href="#" style={interess}>Interessé </a></div>
 				</div>
 				<div className="card-opac">
 					{(this.state.candidat !==null && this.state.cpt !== this.state.candidat.length -1)?<RightOutlined onClick={this.next} style={{fontSize : "3rem", opacity: "0.2"}} />:""}

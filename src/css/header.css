@@ -52,17 +52,19 @@ a{
 
 .btn{
     line-height: 50px;
-    background-color: white;
+    background-color: inherit;
     width: 50%;
     text-align: center;
-    border: none;
-    border-radius: 3px;
-    color: #ff33f3;   
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    /* color: #ff33f3;    */
 }
 
 
 .btn:hover{
-    color : white;
-    background: linear-gradient(#e66465, #9198e5);
-    transition: 0.7s;
+    color : #565A72;
+    border-color: #565A72;
+    background: inherit;
+    transition: 1s;
 }
