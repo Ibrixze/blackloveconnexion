@@ -1,6 +1,6 @@
 // import Manager from "./Manager"
 // import Displayer from "./Displayer"
-import { LeftOutlined } from '@ant-design/icons'
+import { LeftOutlined, BellOutlined, SettingOutlined, PoweroffOutlined } from '@ant-design/icons'
 import React from 'react'
 import "../css/app-generator.css"
 import CandidatesCard from "./CandidatesCard"
@@ -112,16 +112,22 @@ class AppGenerator extends React.Component {
 			<div className='app-container'>
 				<div className="app-header">
 					<div className="menu">
-						<a href="#">Menu</a>
+						{/* <a href="#">Menu</a> */}
+						<div className="profile-picture">
+							<img src={digbeu} style={{width : "100%", height: "100%", borderRadius : "50%"}}/>
+						</div>
 					</div>
 					<div className="nav-link">
-					 <a href="">Notifications</a>
-					 <a href="">Paramètres</a>
-					 <a href="">Déconnexion</a>
+					 <a href=""><BellOutlined/></a>
+					 <a href=""><SettingOutlined/></a>
+					 <a href=""><PoweroffOutlined /></a>
 					</div>
 				</div>
+				<div className="menu-side">
+
+				</div>
 				<div className="displayer">
-					
+
 					{(this.state.viewEvent === true)?<EventView 
 						content={this.state.eventForView} 
 						handleClose={this.handleClose} />:
