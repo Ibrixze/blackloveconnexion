@@ -110,37 +110,14 @@ class AppGenerator extends React.Component {
 
 		return (
 			<div className='app-container'>
-				<div className="manager">
-					<div className="manager-title" onClick={this.toggleEditMode}>
-						{(this.state.editProfile === true)?<LeftOutlined style={{fontSize : "1.5rem", marginRight: "20%", color: 'darkmagenta'}} />:<div className="profile-picture"><img src={digbeu} style={{width : "100%", height: "100%", borderRadius : "50%"}}/></div>}
-						{(this.state.editProfile === true)?<h4 style={{color: "darkmagenta"}}>Mon Profil</h4>:<h4 style={{color: "darkmagenta"}}>Digbeu Cravate</h4>}
-					</div><hr style ={{color:"rgba(0, 0, 0, 0.1)"}}/>		
-					<div className="manager-content">
-						{(this.state.editProfile === false)?<ManagerContentHeader handleActive={this.handleActive} handleIsActive={this.state.isActive}/>:""}
-						{
-						(this.state.editProfile === false && this.state.isActive === 'event' && this.state.events!== null)?this.state.events.map((value, index)=>
-							<RandomContent 
-								handleIsActive={this.state.idListActualActive}
-								handleView={this.handleViewEvent} 
-								key={index} content={value} />
-						):""}
-						{(this.state.editProfile === false && this.state.isActive === 'message')?"Message content":""}
-						{(this.state.editProfile === false && this.state.isActive === 'about')?this.aboutList.map((title, index) => 
-							<RandomContent  
-								handleIsActive={this.setState.idListActualActive}
-								handleView={this.handleViewAbout}
-								key={index} content={title} />
-							):""}
-						{(this.state.editProfile)?
-							<>
-								<span style={{borderTop:"1px solid rgba(0, 0, 0, 0.1)", marginTop: '20%', borderRight : "5px solid darkmagenta"}}>Modifier son profil</span>
-								<span>Contrat de confidentialité</span>
-								<span onClick={()=>{
-										this.setState({viewAbout : false, aboutForView : null, viewEvent: false, eventForView: null, idListActualActive: null}, this.props.handleLogout)
-									}
-								}>Se déconnecter</span>
-							</>:""}
-						{/* {(this.state.editProfile === false && this.state.eventList === true && this.state.events!== null)?this.state.events.map((value, index)=><RandomContent handleIsActive={this.state.idListActualActive} handleViewEvent={this.handleViewEvent} key={index} content={value} />):<><span style={{borderRight : "5px solid darkmagenta"}}>Modifier son profil</span><span>Se déconnecter</span></>} */}
+				<div className="app-header">
+					<div className="menu">
+						<a href="#">Menu</a>
+					</div>
+					<div className="nav-link">
+					 <a href="">Notifications</a>
+					 <a href="">Paramètres</a>
+					 <a href="">Déconnexion</a>
 					</div>
 				</div>
 				<div className="displayer">

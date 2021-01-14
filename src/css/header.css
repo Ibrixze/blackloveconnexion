@@ -51,9 +51,10 @@ a{
 }
 
 .btn{
-    line-height: 50px;
+    line-height: 300%;
     background-color: inherit;
     width: 50%;
+    min-width: 32%;
     text-align: center;
     border: 1px solid white;
     border-radius: 5px;
