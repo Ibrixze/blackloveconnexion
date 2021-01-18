@@ -4,6 +4,7 @@ import { LeftOutlined, BellOutlined, SettingOutlined, PoweroffOutlined } from '@
 import React from 'react'
 import "../css/app-generator.css"
 import CandidatesCard from "./CandidatesCard"
+import logo from '../logo.png'
 import digbeu from './digbeu.jpg'
 import EditProfile from "./EditProfile"
 import EventView from "./EventView"
@@ -107,36 +108,53 @@ class AppGenerator extends React.Component {
 
 	render() {
 		console.log(this.state.editProfile)
-
+		// ui_color = "#e13f58"
 		return (
 			<div className='app-container'>
 				<div className="app-header">
 					<div className="menu">
 						{/* <a href="#">Menu</a> */}
-						<div className="profile-picture">
+						{/* <div className="profile-picture">
 							<img src={digbeu} style={{width : "100%", height: "100%", borderRadius : "50%"}}/>
-						</div>
+						</div> */}
+						<img src={logo} alt="" srcset="" width="100" height="100"/>
+
+					</div>
+					<div className="search">
+						<input class="input-search" type="text" name="" id="" placeholder="Rechercher, un utilisateur ou un event... "/>
 					</div>
 					<div className="nav-link">
-					 <a href=""><BellOutlined/></a>
-					 <a href=""><SettingOutlined/></a>
-					 <a href=""><PoweroffOutlined /></a>
+					 <a href="">
+					 	<div className="profile-picture">
+							<img src={digbeu} style={{width : "100%", height: "100%", borderRadius : "50%"}}/>
+						</div> 
+					 </a>
+					 <a href="" style={{color: "#e13f58"}}>Ibrixze</a>
+					 <a href=""><BellOutlined style={{fontSize : 25, color: "#37384e"}}/></a>
+					 <a href=""><PoweroffOutlined style={{fontSize : 25, color: "#37384e"}} /></a>
 					</div>
 				</div>
-				<div className="menu-side">
-
-				</div>
 				<div className="displayer">
-
-					{(this.state.viewEvent === true)?<EventView 
-						content={this.state.eventForView} 
-						handleClose={this.handleClose} />:
-						(this.state.viewAbout === true)?this.state.aboutForView.map((value, index) => <AboutView 
-							key={index}
-							content={value} 
-							handleClose={this.handleClose} />):
-						(this.state.editProfile === false)?<CandidatesCard />:<EditProfile />}
-					{/*OUAIS JE SE SAIS C'EST MOCHE CE QUE JE VIENS DE FAIRE, MAIS C'EST POUR LE TEST. JE COMPTE TOUT REORGANISER LE TOUT APRES*/}
+					<div className="menu-side">
+						<div><a href="#">DECOUVRIR</a></div>
+						<div><a href="#">EVENTS</a></div>
+						<div><a href="#">MES PHOTOS</a></div>
+					</div>
+					<div className="content">
+						<div className="title">
+							<h1>DECOUVRIR</h1>
+						</div>
+						<div style={{}}></div>
+						{(this.state.viewEvent === true)?<EventView 
+							content={this.state.eventForView} 
+							handleClose={this.handleClose} />:
+							(this.state.viewAbout === true)?this.state.aboutForView.map((value, index) => <AboutView 
+								key={index}
+								content={value} 
+								handleClose={this.handleClose} />):
+							(this.state.editProfile === false)?<CandidatesCard />:<EditProfile />}
+						{/*OUAIS JE SE SAIS C'EST MOCHE CE QUE JE VIENS DE FAIRE, MAIS C'EST POUR LE TEST. JE COMPTE TOUT REORGANISER LE TOUT APRES*/}
+					</div>
 				</div>
 			</div>
 		)

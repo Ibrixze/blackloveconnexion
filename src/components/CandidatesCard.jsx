@@ -67,9 +67,9 @@ class CandidatesCard extends React.Component {
 		
 		return (
 			<>
-				<div className="card-opac">
+				{/* <div className="card-opac">
 					{(this.state.cpt !== 0)?<LeftOutlined onClick={this.prev} className="nav-btn" style={{fontSize : "3rem", opacity: "0.2"}} />:""}
-				</div>
+				</div> */}
 				<div className="displayer-content">
 					<div className="card">
 						<div className="card-picture">
@@ -79,11 +79,11 @@ class CandidatesCard extends React.Component {
 							<p>{(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].name : ""} , {(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].address.city : ""}</p>
 						</div>
 					</div>
-					<div><a href="#" style={interess}>Interessé </a></div>
+					<div className="rating"><a href="#" style={interess}>Interessé </a></div>
 				</div>
-				<div className="card-opac">
+				{/* <div className="card-opac">
 					{(this.state.candidat !==null && this.state.cpt !== this.state.candidat.length -1)?<RightOutlined onClick={this.next} style={{fontSize : "3rem", opacity: "0.2"}} />:""}
-				</div>
+				</div> */}
 			</>
 		)
 	}
