@@ -46,8 +46,8 @@
 }
 
 .app-header .menu .profile-picture{
-    width: 5%;
-    height: 5%;
+    width: 3%;
+    height: 3%;
 }
 
 .app-header .nav-link{
@@ -62,13 +62,13 @@
 .app-header .nav-link a{
     margin-left: 10%;
     font-size:18px;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: rgb(90, 130, 195);
 }
 
 .manager{
     /* border-right: 1px solid black; */
-    border : 1px solid rgba(0, 0, 0, 0.1);
+    /* border : 1px solid rgba(0, 0, 0, 0.1); */
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
     margin:0;
     flex: 1;
@@ -76,11 +76,14 @@
     /* height: 100vh; */
 }
 
+/****************************************************************************************************************/
+
 .menu-side{
-    border: 1px dashed rebeccapurple;
+    /* border: 1px dashed rebeccapurple; */
     display:flex;
+    margin-top: 5%;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items:center;
     padding: 3%;
     flex: 1;
@@ -97,19 +100,59 @@
 .menu-side :first-child a{
     color: #e13f58;
 }
+
+/****************************************************************************************************************/
+.displayer{
+    /* border-right: 1px solid black; */
+    /* margin:0; */
+
+    display: flex;
+    flex: 7;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    overflow: hidden;
+    /* background-color: orange; */
+
+
+    /* width: 75%; */
+    /* height: 100; */
+}
+
+.displayer-container{
+    display: flex;
+    justify-content: row;
+    flex: 2;
+    border-radius:5%;
+    /* background-color: #e13f58; */
+    width: 95%;
+    height: 60%;
+}
+
+
 .displayer .content{
     display: flex;
     flex-direction: column;
-    flex: 3
+    flex: 3;
+    width: 100%;
+    /* border: 1px solid black; */
+    /* background-color: green; */
 }
 
 .displayer .content .title{
+   
+    flex:1;
     color: #37384e;
     margin-left: 10%;
 }
 
+.title h1{
+    color: #37384e;
+}
 
-.manager-content{
+
+
+/* .manager-content{
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -137,23 +180,8 @@
     justify-content: start;
     align-items: center;
 
-}
-.displayer{
-    /* border-right: 1px solid black; */
-    /* margin:0; */
+} */
 
-    display: flex;
-    flex: 7;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    overflow: hidden;
-    
-
-
-    /* width: 75%; */
-    /* height: 100; */
-}
 .displayer-in-component{/*
     background-color: white;
     flex: 3;
@@ -162,12 +190,19 @@
     align-items: center;
     overflow: hidden;*/
 }
+
+/****************************************************************************************************************/
+
+
 .displayer-content{
+    /* border : 1px dashed blue; */
     display: flex;
     flex-direction: column;
-    flex: 1;
-    width: 50%;
-    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+    width: 100%;
+    height: 50%;
 }
 /* .displayer-content:nth-child(2){
     border : 1px dashed rgba(0, 0, 0, 0.1);
@@ -177,11 +212,13 @@
     display: flex;
     flex-direction: row;
     flex: 1;
-    border : 1px solid rgba(0, 0, 0, 1);
+    /* border : 1px solid rgba(0, 0, 0, 1); */
     border-radius: 3%;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
     width: 100%;
-    height: 100%;
+    height: 75%;
+    z-index: 5;
+    /* background-color: red; */
 }
 .card-opac{
     flex:1;
@@ -193,18 +230,37 @@
 }
 
 .rating{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     flex: 1;
+    /* background-color: #37384e; */
+    width: 100%;
+    height: 20%;
+}
+.rating a{
+    margin-right:3%;
 }
 
 .card-picture{
-    flex:6;
+    flex:1;
     width: 500px;
     height: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
+    /* background-color:blue; */
 }
 .card-info{
-    flex : 4
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex : 1;
+    border-radius: 0% 4% 4% 0%;
+    background-color: #e13f58;
+    color:#fff;
+    font-size: 1.3rem;
 }
 .swip{
     display: block;
@@ -242,6 +298,12 @@
 .header-active{
     border-bottom: 3px solid darkmagenta;
 }
+
+
+
+
+
+/****************************************************************************************************************/
 
 .edit-container{
     display: flex;

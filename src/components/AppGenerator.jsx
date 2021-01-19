@@ -11,7 +11,7 @@ import EventView from "./EventView"
 import ManagerContentHeader from "./ManagerContentHeader"
 import RandomContent from "./RandomContent"
 import AboutView from './AboutView'
-
+import MenuAside from './MenuAside'
 class AppGenerator extends React.Component {
 
 	constructor(props) {
@@ -129,31 +129,31 @@ class AppGenerator extends React.Component {
 							<img src={digbeu} style={{width : "100%", height: "100%", borderRadius : "50%"}}/>
 						</div> 
 					 </a>
-					 <a href="" style={{color: "#e13f58"}}>Ibrixze</a>
-					 <a href=""><BellOutlined style={{fontSize : 25, color: "#37384e"}}/></a>
-					 <a href=""><PoweroffOutlined style={{fontSize : 25, color: "#37384e"}} /></a>
+					 <a href="" style={{color: "#e13f58"}}>Digbeu</a>
+					 <a href=""><BellOutlined style={{fontSize : 20, color: "#37384e"}}/></a>
+					 <a href=""><PoweroffOutlined style={{fontSize : 20, color: "#37384e"}} /></a>
 					</div>
 				</div>
 				<div className="displayer">
-					<div className="menu-side">
-						<div><a href="#">DECOUVRIR</a></div>
-						<div><a href="#">EVENTS</a></div>
-						<div><a href="#">MES PHOTOS</a></div>
+					<div className="title">
+						<h1>DECOUVRIR</h1>
 					</div>
-					<div className="content">
-						<div className="title">
-							<h1>DECOUVRIR</h1>
+					<div className="displayer-container">
+						<MenuAside />
+						<div className="content">
+							{/* <div style={{flex : 1, display:"flex", width: "70%", border :"1px dashed black"}}> */}
+
+								{(this.state.viewEvent === true)?<EventView 
+									content={this.state.eventForView} 
+									handleClose={this.handleClose} />:
+									(this.state.viewAbout === true)?this.state.aboutForView.map((value, index) => <AboutView 
+										key={index}
+										content={value} 
+										handleClose={this.handleClose} />):
+									(this.state.editProfile === false)?<CandidatesCard />:<EditProfile />}
+								{/*OUAIS JE SE SAIS C'EST MOCHE CE QUE JE VIENS DE FAIRE, MAIS C'EST POUR LE TEST. JE COMPTE TOUT REORGANISER LE TOUT APRES*/}
+							{/* </div> */}
 						</div>
-						<div style={{}}></div>
-						{(this.state.viewEvent === true)?<EventView 
-							content={this.state.eventForView} 
-							handleClose={this.handleClose} />:
-							(this.state.viewAbout === true)?this.state.aboutForView.map((value, index) => <AboutView 
-								key={index}
-								content={value} 
-								handleClose={this.handleClose} />):
-							(this.state.editProfile === false)?<CandidatesCard />:<EditProfile />}
-						{/*OUAIS JE SE SAIS C'EST MOCHE CE QUE JE VIENS DE FAIRE, MAIS C'EST POUR LE TEST. JE COMPTE TOUT REORGANISER LE TOUT APRES*/}
 					</div>
 				</div>
 			</div>
