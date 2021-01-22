@@ -1,9 +1,9 @@
 
-function ContainerTitle(){
+function ContainerTitle({content}){
     return (
-        <div className="title">
-			<h1>DECOUVRIR</h1>
-		</div>
+        <>
+			<h1>{ content || "DECOUVRIR" }</h1>
+		</>
     )
 }
 

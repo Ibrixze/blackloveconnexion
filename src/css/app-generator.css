@@ -97,8 +97,12 @@
     font-weight: bold;
     color: #37384e;
 }
-.menu-side :first-child a{
+/* .menu-side :first-child a{
     color: #e13f58;
+} */
+
+.menu-side-active{
+    color: #e13f58 !important;
 }
 
 /****************************************************************************************************************/
@@ -149,6 +153,8 @@
 .title h1{
     color: #37384e;
 }
+
+
 
 
 

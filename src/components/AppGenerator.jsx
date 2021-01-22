@@ -1,17 +1,21 @@
 // import Manager from "./Manager"
 // import Displayer from "./Displayer"
-import { LeftOutlined, BellOutlined, SettingOutlined, PoweroffOutlined } from '@ant-design/icons'
 import React from 'react'
 import "../css/app-generator.css"
 import CandidatesCard from "./CandidatesCard"
-import logo from '../logo.png'
-import digbeu from './digbeu.jpg'
 import EditProfile from "./EditProfile"
 import EventView from "./EventView"
-import ManagerContentHeader from "./ManagerContentHeader"
-import RandomContent from "./RandomContent"
 import AboutView from './AboutView'
 import MenuAside from './MenuAside'
+import ContainerTitle from './ContainerTitle'
+import AppGeneratorHeader from './AppGeneratorHeader'
+// import { LeftOutlined, BellOutlined, SettingOutlined, PoweroffOutlined } from '@ant-design/icons'
+// import logo from '../logo.png'
+// import digbeu from './digbeu.jpg'
+// import ManagerContentHeader from "./ManagerContentHeader"
+// import RandomContent from "./RandomContent"
+
+
 class AppGenerator extends React.Component {
 
 	constructor(props) {
@@ -43,6 +47,7 @@ class AppGenerator extends React.Component {
 			aboutForView : null,
 			eventForView : null,
 			idListActualActive : null,
+			containerTitle : null,
 			events : [] 
 		}
 	}
@@ -90,6 +95,34 @@ class AppGenerator extends React.Component {
 		this.setState({viewEvent : true, eventForView : dataEventForView, idListActualActive : eventId}, () => console.log("one event clicked", this.state.idListActualActive))
 	}
 
+	handleSetContainerTitle = (e) => {
+		e.preventDefault()
+		const elements = document.querySelectorAll('.menu-side a')
+		console.log(elements)
+		// suppression de la classe active si elle existe déjà 
+		elements.forEach((element , index) => {
+			if(element.classList.contains('menu-side-active'))
+				element.classList.remove('menu-side-active')
+		})
+
+		const labelSplit = e.target.getAttribute('id').split('-') 
+		let label = null
+		// changement du contenu du titre et ajout de la classe active sur le lien cliqué
+
+		if (labelSplit.length > 1){
+			label = labelSplit[0].toUpperCase() + ' ' + labelSplit[1].toUpperCase()
+			document.getElementById(e.target.getAttribute('id')).classList.add("menu-side-active")
+		}
+		else{
+			label = labelSplit[0].toUpperCase()
+			document.getElementById(e.target.getAttribute('id')).classList.add("menu-side-active")
+		}
+		this.setState({
+			containerTitle : label
+		}, console.log(label))
+		// const selectedElement = document.querySelector('')
+	}
+
 	handleClose = (e) =>{
 		e.preventDefault()
 		this.setState({viewAbout : false, aboutForView : null, viewEvent: false, eventForView: null, idListActualActive: null}, () => console.log('event view closed'))
@@ -112,34 +145,14 @@ class AppGenerator extends React.Component {
 		return (
 			<div className='app-container'>
 				<div className="app-header">
-					<div className="menu">
-						{/* <a href="#">Menu</a> */}
-						{/* <div className="profile-picture">
-							<img src={digbeu} style={{width : "100%", height: "100%", borderRadius : "50%"}}/>
-						</div> */}
-						<img src={logo} alt="" srcset="" width="100" height="100"/>
-
-					</div>
-					<div className="search">
-						<input class="input-search" type="text" name="" id="" placeholder="Rechercher, un utilisateur ou un event... "/>
-					</div>
-					<div className="nav-link">
-					 <a href="">
-					 	<div className="profile-picture">
-							<img src={digbeu} style={{width : "100%", height: "100%", borderRadius : "50%"}}/>
-						</div> 
-					 </a>
-					 <a href="" style={{color: "#e13f58"}}>Digbeu</a>
-					 <a href=""><BellOutlined style={{fontSize : 20, color: "#37384e"}}/></a>
-					 <a href=""><PoweroffOutlined style={{fontSize : 20, color: "#37384e"}} /></a>
-					</div>
+					<AppGeneratorHeader />
 				</div>
 				<div className="displayer">
 					<div className="title">
-						<h1>DECOUVRIR</h1>
+						<ContainerTitle content={this.state.containerTitle}/>
 					</div>
 					<div className="displayer-container">
-						<MenuAside />
+						<MenuAside select={this.handleSetContainerTitle} />
 						<div className="content">
 							{/* <div style={{flex : 1, display:"flex", width: "70%", border :"1px dashed black"}}> */}
 

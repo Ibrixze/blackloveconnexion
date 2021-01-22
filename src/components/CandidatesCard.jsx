@@ -73,15 +73,15 @@ class CandidatesCard extends React.Component {
 				<div className="displayer-content">
 					<div className="card">
 						<div className="card-picture">
-							<img src={`https://picsum.photos/id/${(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].id:''}/315/365`} style={{borderTopLeftRadius: "3%", borderBottomLeftRadius: "10px", width:"100%", height:"100%"}}/>
+							<img src={`https://picsum.photos/id/${(this.state.candidat !== null) ? parseInt(this.state.candidat[this.state.cpt].id) * parseInt(Math.random() * (500 - 1) + 1):''}/315/365`} style={{borderTopLeftRadius: "3%", borderBottomLeftRadius: "10px", width:"100%", height:"100%"}}/>
 						</div>
 						<div className="card-info">
-							<p>{(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].name : ""} , {parseInt(Math.random()*(42 - 25) + 25)}</p>
-							<p>{(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].address.street : ""} , {(this.state.candidat !== null) ? this.state.candidat[this.state.cpt].address.city : ""}</p>
+							<p>{(this.state.candidat !== null) ? this.state.candidat[(parseInt(Math.random() * (10 - 1) + 1))].name : ""} , {parseInt(Math.random()*(42 - 25) + 25)}</p>
+							<p>{(this.state.candidat !== null) ? this.state.candidat[(parseInt(Math.random() * (10 - 1) + 1))].address.street : ""} , {(this.state.candidat !== null) ? this.state.candidat[(parseInt(Math.random() * (10- 1) + 1))].address.city : ""}</p>
 						</div>
 					</div>
 					<div className="rating">
-						<a href="#"><HeartOutlined style={{fontSize : 40, color: "#e13f58"}}/></a>
+						<a href="#"><HeartFilled style={{fontSize : 40, color: "#e13f58"}}/></a>
 						<a href="#"><CloseOutlined style={{fontSize : 40, color: "#37384e"}}/></a>
 					</div>
 				</div>
